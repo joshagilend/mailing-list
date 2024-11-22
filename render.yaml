@@ -1,1 +1,204 @@
-app
+# Application Configuration
+application:
+  name: SampleApp
+  version: 1.0.0
+  description: A sample YAML configuration file with 400 lines.
+
+# Database Configuration
+database:
+  host: localhost
+  port: 5432
+  username: admin
+  password: secret
+  name: sample_app_db
+
+# Logging Configuration
+logging:
+  level: info
+  file: /var/log/sample_app.log
+  rotation:
+    enabled: true
+    max_size: 10MB
+    retention: 7
+  console_output: true
+
+# Features
+features:
+  auth: true
+  payments: true
+  notifications: true
+  analytics: true
+
+# Auth Configuration
+auth:
+  jwt_secret: your-jwt-secret
+  token_expiry_minutes: 60
+  refresh_token_expiry_days: 7
+  oauth_providers:
+    - name: google
+      client_id: google-client-id
+      client_secret: google-client-secret
+    - name: facebook
+      client_id: facebook-client-id
+      client_secret: facebook-client-secret
+    - name: github
+      client_id: github-client-id
+      client_secret: github-client-secret
+
+# Payment Gateways
+payment_gateways:
+  - name: stripe
+    api_key: stripe-api-key
+    webhook_secret: stripe-webhook-secret
+  - name: paypal
+    client_id: paypal-client-id
+    client_secret: paypal-client-secret
+
+# Notification Settings
+notifications:
+  email:
+    smtp_host: smtp.example.com
+    smtp_port: 587
+    username: email-user
+    password: email-pass
+    from_address: no-reply@example.com
+  sms:
+    provider: twilio
+    account_sid: twilio-account-sid
+    auth_token: twilio-auth-token
+    from_number: +123456789
+
+# Analytics Settings
+analytics:
+  enabled: true
+  tracking_id: UA-12345678-9
+  integrations:
+    - google_analytics
+    - mixpanel
+    - segment
+
+# Users List
+users:
+  - username: admin
+    email: admin@example.com
+    roles: 
+      - admin
+  - username: user1
+    email: user1@example.com
+    roles: 
+      - user
+  - username: user2
+    email: user2@example.com
+    roles: 
+      - user
+  - username: moderator
+    email: moderator@example.com
+    roles: 
+      - moderator
+
+# Permissions
+permissions:
+  admin:
+    - manage_users
+    - manage_settings
+    - view_reports
+  moderator:
+    - manage_posts
+    - moderate_comments
+  user:
+    - view_content
+    - post_comments
+
+# API Endpoints
+api_endpoints:
+  - path: /api/v1/auth
+    methods: 
+      - POST
+  - path: /api/v1/users
+    methods: 
+      - GET
+      - POST
+  - path: /api/v1/posts
+    methods: 
+      - GET
+      - POST
+      - DELETE
+
+# Cache Settings
+cache:
+  enabled: true
+  host: localhost
+  port: 6379
+  ttl_seconds: 3600
+
+# Scheduler Jobs
+scheduler:
+  jobs:
+    - name: cleanup_old_sessions
+      cron: "0 0 * * *"
+      enabled: true
+    - name: send_daily_report
+      cron: "0 6 * * *"
+      enabled: true
+    - name: sync_external_data
+      cron: "*/15 * * * *"
+      enabled: true
+
+# Localization
+localization:
+  default_locale: en-US
+  supported_locales:
+    - en-US
+    - fr-FR
+    - es-ES
+    - de-DE
+
+# Testing Settings
+testing:
+  enabled: true
+  test_users:
+    - username: testuser1
+      email: testuser1@example.com
+    - username: testuser2
+      email: testuser2@example.com
+  mock_data: true
+
+# Development Settings
+development:
+  debug_mode: true
+  live_reload: true
+  test_server:
+    host: localhost
+    port: 8080
+
+# Production Settings
+production:
+  debug_mode: false
+  scaling:
+    enabled: true
+    min_instances: 2
+    max_instances: 10
+
+# Placeholder Section
+placeholder_section:
+  field1: value1
+  field2: value2
+  field3: value3
+  field4: value4
+  field5: value5
+  field6: value6
+  field7: value7
+  field8: value8
+  field9: value9
+  field10: value10
+  nested_section:
+    sub_field1: sub_value1
+    sub_field2: sub_value2
+    sub_field3: sub_value3
+    sub_field4: sub_value4
+    sub_field5: sub_value5
+    sub_field6: sub_value6
+    sub_field7: sub_value7
+    sub_field8: sub_value8
+    sub_field9: sub_value9
+    sub_field10: sub_value10
